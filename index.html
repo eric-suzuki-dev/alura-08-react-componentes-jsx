@@ -68,8 +68,9 @@
       }
 
       function PaginaDeLogin() {
-        const [email, setEmail] = React.useState('');
-   
+        const [email, setEmail] = React.useState("");
+        const [senha, setSenha] = React.useState("");
+
         return (
           <div className="container-login">
             <img
@@ -91,6 +92,8 @@
                   label="Senha"
                   tipo="password"
                   placeholder="Digite a sua senha"
+                  value={senha}
+                  setValor={setSenha}
                 />
                 <Botao>Login</Botao>
               </form>
