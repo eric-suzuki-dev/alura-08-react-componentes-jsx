@@ -80,9 +80,7 @@
       }
 
       function Texto({ classe, children }) {
-        return (
-          <p className={classe}>{children}</p>
-        )
+        return <p className={classe}>{children}</p>;
       }
 
       function ItemRedesSociais({ link, nome }) {
@@ -93,7 +91,15 @@
               {nome}
             </a>
           </li>
-        )
+        );
+      }
+
+      function Link({ children }) {
+        return (
+          <a href="#" className="container-links__link">
+            {children}
+          </a>
+        );
       }
 
       function PaginaDeLogin() {
@@ -115,7 +121,7 @@
             <section>
               <form onSubmit={handleSubmit}>
                 <Titulo>Login</Titulo>
-                <Subtitulo>Boas vindas! Faça o seu login</Subtitulo>
+                <Subtitulo>Boas-vindas! Faça o seu login</Subtitulo>
                 <CampoDeDigitacao
                   label="E-mail ou usuário"
                   tipo="email"
@@ -140,6 +146,27 @@
                 </fieldset>
                 <Botao>Login</Botao>
               </form>
+
+              <div className="container-links">
+                <Texto classe="container-links__titulo">
+                  ou entre com outras contas
+                </Texto>
+                <ul>
+                  <ItemRedesSociais
+                    link="https://www.github.com"
+                    nome="Github"
+                  />
+                  <ItemRedesSociais
+                    link="https://www.google.com"
+                    nome="Google"
+                  />
+                </ul>
+                <Texto classe="container-links__texto">
+                  Ainda não tem conta?
+                </Texto>
+                <Link>Crie seu cadastro!</Link>
+              </div>
+
             </section>
           </div>
         );
